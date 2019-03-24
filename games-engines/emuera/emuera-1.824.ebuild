@@ -17,9 +17,7 @@ KEYWORDS="amd64 x86"
 IUSE="debug developer"
 
 
-DEPEND="app-emulation/wine-mono
-	virtual/wine
-"
+DEPEND=""
 RDEPEND="${DEPEND}"
 BDEPEND="app-arch/unzip"
 
