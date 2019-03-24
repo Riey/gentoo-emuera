@@ -1,3 +1,5 @@
+#!/bin/sh
+
 GAME_DIR=${1:-$PWD}
 TEMP_DIR=$(mktemp -d)
 

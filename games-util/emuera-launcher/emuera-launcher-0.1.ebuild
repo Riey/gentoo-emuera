@@ -17,8 +17,9 @@ DEPEND="games-engines/emuera
 	app-emulation/wine-mono"
 RDEPEND="${DEPEND}"
 BDEPEND=""
+S="${WORKDIR}"
 
 src_install() {
-	doexe ${FILESDIR}/emuera.sh
+	install -D -m 755 "${FILESDIR}/emuera" "${D}/usr/bin/emuera"
 }
 
