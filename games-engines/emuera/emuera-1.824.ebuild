@@ -41,13 +41,14 @@ src_install() {
 	fi
 
 	BUILD_OUTPUT="Emuera/bin/${DIR}"
-	insinto /usr/lib/emuera
-	doins $BUILD_OUTPUT/Emuera.exe
+	OUTPUT=/usr/lib/emuera
+	insinto ${OUTPUT}
+	doins ${BUILD_OUTPUT}/Emuera.exe
 
 	if use developer; then
-		doins $BUILD_OUTPUT/Emuera.pdb
+		doins ${BUILD_OUTPUT}/Emuera.pdb
 	fi
 
-	make_wrapper emuera "wine $BUILD_OUTPUT/Emuera.exe"
+	make_wrapper emuera "wine ${OUTPUT}/Emuera.exe"
 }
 
