@@ -19,7 +19,7 @@ IUSE="+${USE_DOTNET} debug developer"
 
 
 DEPEND="app-emulation/wine-mono
-		virtual/wine
+	virtual/wine
 "
 RDEPEND="${DEPEND}"
 BDEPEND="app-arch/unzip"
