@@ -1,26 +1,14 @@
 #!/bin/sh
 
 GAME_DIR=${1:-$PWD}
-TEMP_DIR=$(mktemp -d)
 
-pushd $(TEMP_DIR)
+pushd "$GAME_DIR"
 
-for f in "$GAME_DIR/*"
-do
-    ln -s "$f" .
-done
+ln -s /usr/lib/emuera/Emuera.exe .#Emuera.exe
 
-for f in /usr/lib/emuera/*
-do
-    ln -sf "$f" .
-done
+wine .#Emuera.exe
 
-wine Emuera.exe
-
-cp -R ./sav "$GAME_DIR"
-cp ./*.sav "$GAME_DIR"
+rm .#Emuera.exe
 
 popd
-
-rm -rf "$TEMP_DIR"
 
