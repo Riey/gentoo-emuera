@@ -14,8 +14,7 @@ SRC_URI="https://osdn.net/dl/emuera/src$MY_SRC_VER.zip"
 LICENSE="ZLIB"
 SLOT="0"
 KEYWORDS="amd64 x86"
-USE_DOTNET="net45"
-IUSE="+${USE_DOTNET} debug developer"
+IUSE="debug developer"
 
 
 DEPEND="app-emulation/wine-mono
