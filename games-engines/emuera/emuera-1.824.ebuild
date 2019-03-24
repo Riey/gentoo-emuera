@@ -4,12 +4,12 @@
 EAPI=6
 RESTRICT="mirror"
 
-inherit msbuild versionator
+inherit mono-env msbuild versionator
 
 DESCRIPTION="emulator of eramaker"
 HOMEPAGE="https://osdn.net/projects/emuera"
 MY_SRC_VER=$(replace_version_separator 1 '')
-SRC_URI="https://osdn.net/dl/emuera/src$MY_SRC_VER.zip"
+SRC_URI="https://osdn.net/dl/emuera/src${MY_SRC_VER}.zip"
 
 LICENSE="ZLIB"
 SLOT="0"
@@ -24,6 +24,10 @@ RDEPEND="${DEPEND}"
 BDEPEND="app-arch/unzip"
 
 S="${WORKDIR}"
+
+pkg_setup() {
+	mono-env_pkg_setup
+}
 
 src_compile() {
 	emsbuild
