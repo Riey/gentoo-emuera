@@ -48,7 +48,5 @@ src_install() {
 	if use developer; then
 		doins ${BUILD_OUTPUT}/Emuera.pdb
 	fi
-
-	make_wrapper emuera "wine ${OUTPUT}/Emuera.exe"
 }
 
